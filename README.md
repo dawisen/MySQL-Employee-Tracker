@@ -1,4 +1,4 @@
-# Employee-Tracker
+# Employee Tracker
 
 ## Description:
 Many business owners want to want to be able to view and manage their departments, roles, and employees in their company in a way that allows them to structure their organization properly. This node-based application allows business owners to do just that. Add, view, and update your departments and employee information with ease using Employee Tracker.
