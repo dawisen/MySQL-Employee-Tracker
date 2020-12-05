@@ -1,0 +1,26 @@
+{
+  "name": "mysql-employee-tracker",
+  "version": "1.0.0",
+  "description": "Many business owners want to want to be able to view and manage their departments, roles, and employees in their company in a way that allows them to structure their organization properly. This node-based application allows business owners to do just that. Add, view, and update your departments and employee information with ease using Employee Tracker.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npm i && node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dawisen/MySQL-Employee-Tracker.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dawisen/MySQL-Employee-Tracker/issues"
+  },
+  "homepage": "https://github.com/dawisen/MySQL-Employee-Tracker#readme",
+  "dependencies": {
+    "console.table": "^0.10.0",
+    "inquirer": "^7.3.3",
+    "mysql": "^2.18.1",
+    "util": "^0.12.3"
+  }
+}
