@@ -68,7 +68,7 @@ function runQuestions() {
           addRole();
           break;
         case "Update Employee Role":
-          updateRole();
+          // updateRole();
           break;
         case "Exit":
           console.log("Exiting program");
@@ -207,44 +207,63 @@ function addRole() {
   });
 }
 
-// function updateRole() {
-//   employeeList()
-//     .then(() => {
-//       inquirer.prompt([
-//         {
-//           type: "input",
-//           name: "employee",
-//           message:
-//             "Please enter the id number of the employee you want to update",
-//         },
-//       ]);
-//     })
-//     .then(() => {
-//       connection.query(query).then((roles) => {
-//         console.table(roles);
-//         console.log(roles);
-//         inquirer.prompt([
-//           {
-//             type: "input",
-//             name: "role",
-//             message:
-//               "What is their role? (enter the id number matching one of the titles above)",
-//           },
-//         ]);
+function getEmployees() {
+  var query =
+    "SELECT first_name, last_name, title, salary, department_name FROM employee INNER JOIN role, department ";
+  query +=
+    "WHERE (employee.role_id = role.id) && (role.department_id = department.id)";
+  return connection.query(query);
+}
 
-//         // var query = "UPDATE employee SET role_id=? WHERE last_name=?"
-//         var query = "SELECT title, id FROM role";
-//         connection.query(query).then((roles) => {
-//           console.table(roles);
-//           inquirer.prompt([
-//             {
-//               type: "input",
-//               name: "role",
-//               message:
-//                 "What is their role? (enter the id number matching one of the titles above)",
-//             },
-//           ]);
-//         });
-//       });
-//     });
-// }
+function updateRole() {
+  getEmployees()
+    .then((employees) => {
+      console.log(employees);
+      employee_choices = [];
+      for (employee in employees) {
+        console.log("this is the employee:", employee);
+        employee_choices.push(employee.title);
+      }
+      inquirer.prompt([
+        {
+          type: "rawlist",
+          name: "employee",
+          message:
+            "Please select the employee you want to update",
+          choices: employee_choices,
+        },
+      ]);
+    })
+    .then((selectedEmployee) => {
+      console.log("this is the response from employee choice", selectedEmployee);
+      var query = "SELECT title, id FROM role";
+      connection.query(query).then((roles) => {
+        role_choices = [];
+        for (index in roles) {
+          role_choices.push(index.title);
+          console.log("this is the roles array", role_choices);
+        }
+        inquirer.prompt([
+          {
+            type: "rawlist",
+            name: "role",
+            message:
+              "What is their new role?",
+            choices: role_choices,
+          },
+        ]).then((selectedRole) => {
+          console.log("this is the response from selected role", selectedRole);
+          var query = "UPDATE employee SET role_id=? WHERE last_name=?";
+          connection.query(query)
+            .catch((err) => {
+              console.log("ERROR", err)
+                .then((roles) => {
+                  console.log("Employee updated!")
+        
+                });
+            })
+
+        });
+    })
+  })
+}
