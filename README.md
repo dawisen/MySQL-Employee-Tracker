@@ -14,7 +14,7 @@ Many business owners want to want to be able to view and manage their department
 * [Questions](#Questions)
 
 ## Demo
-Watch my walkthrough on [Youtube]()
+Watch my walkthrough on [Youtube](https://youtu.be/ZRvDEHsWDjM)
 ## Installation
 
 > npm i inquirer && npm i mysql
