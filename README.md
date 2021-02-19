@@ -23,7 +23,7 @@ Watch my walkthrough on [Youtube](https://youtu.be/ZRvDEHsWDjM)
 To use the repo, fork it to your github page or clone the repository.
 
 ## License
-No license
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 ## Contributors
 dawisen
