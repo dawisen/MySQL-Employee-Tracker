@@ -10,7 +10,6 @@ Many business owners want to want to be able to view and manage their department
 * [Usage](#Usage)
 * [License](#License)
 * [Contributing](#Contributing)
-* [Testing](#Testing)
 * [Questions](#Questions)
 
 ## Demo
@@ -27,10 +26,7 @@ To use the repo, fork it to your github page or clone the repository.
 
 ## Contributors
 dawisen
-
-## Testing
-No tests available
   
 ## Questions
-If you have any questions or issues please contact me via [email](daniellewwise@gmail.com)<br>
+If you have any questions or issues please contact me via email daniellewwise@gmail.com)<br>
 View my other projects [here](https://github.com/dawisen?tab=repositories)
